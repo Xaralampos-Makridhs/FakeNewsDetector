@@ -44,8 +44,3 @@ Note: the order of probabilities corresponds to the model's class ordering.
 - The script removes HTML and URLs and lowercases text but does not apply stemming/lemmatization.
 - No model persistence is implemented — training occurs each run.
 - The CSVs must include a `text` column, as in the Kaggle dataset.
-
-
----
-
-I translated the repository README into English and included the Kaggle dataset links and a concise description of how the script works and how to run it. If you want, I can next generate a requirements.txt, a joblib wrapper to save/load the trained model, or an example Jupyter notebook with evaluation plots — tell me which you'd prefer and I will prepare it.
