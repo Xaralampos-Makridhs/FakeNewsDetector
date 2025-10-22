@@ -76,8 +76,9 @@ X_train, X_test, y_train, y_test = train_test_split(
 # ---- TF-IDF Vectorization ----
 vectorizer = TfidfVectorizer(
     max_features=5000,        # περιορισμος λεξεων
-    ngram_range=(1,3),        # 1gram--> "this is fake news" → ["this", "is", "fake", "news"]
-                               # 2gram--> "this is fake news" → ["this is", "is fake", "fake news"]
+    ngram_range=(1,3),          # 1gram--> "this is fake news" -> ["this", "is", "fake", "news"]
+                                # 2gram--> "this is fake news" -> ["this is", "is fake", "fake news"]
+                                # 3gram--> "this is fake news" -> ["this is fake", "is fake news", "]
     stop_words='english'      # αφαιρεση συχνων λεξεων
 )
 
@@ -114,4 +115,5 @@ prediction=model.predict(text_tfidf)
 probabilities=model.predict_proba(text_tfidf)
 
 print("\nPredicted label:", prediction[0])
+
 print("Probabilities for each class:", probabilities[0])
