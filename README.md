@@ -36,8 +36,6 @@ The code file implementing this pipeline is `fakenewsdetector.py`.
 - beautifulsoup4
 - scikit-learn
 
-Note: the order of probabilities corresponds to the model's class ordering.
-
 ## Important notes and limitations
 
 - Model performance depends on preprocessing and dataset balance. Always inspect precision and recall per class, especially when classes are imbalanced.
