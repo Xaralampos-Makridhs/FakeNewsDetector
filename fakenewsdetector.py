@@ -89,7 +89,7 @@ X_test_tfidf = vectorizer.transform(X_test)  # σωστό transform, όχι fit_
 # print("X_train shape:", X_train_tfidf.shape)
 # print("X_test shape:", X_test_tfidf.shape)
 
-#Classification report: όλα metrics >0.9 είναι εξαιρετικό, αλλά >0.8 είναι αποδεκτό για text classification με μεγάλο dataset.
+#Classification report
 
 # ---- Logistic Regression Model ----
 model = LogisticRegression(solver='liblinear')
@@ -99,7 +99,7 @@ model.fit(X_train_tfidf, y_train)
 y_prediction = model.predict(X_test_tfidf)
 print("---- Model Trained ----")
 
-#Confusion matrix: διαγώνιοι μεγάλοι, off-diagonals μικροί.
+#Confusion matrix
 
 # ---- Metrics ----
 print("---- Model Evaluation ----")
@@ -117,4 +117,5 @@ probabilities=model.predict_proba(text_tfidf)
 print("\nPredicted label:", prediction[0])
 
 print("Probabilities for each class:", probabilities[0])
+
 
