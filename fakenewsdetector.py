@@ -79,7 +79,7 @@ vectorizer = TfidfVectorizer(
     ngram_range=(1,3),          # 1gram--> "this is fake news" -> ["this", "is", "fake", "news"]
                                 # 2gram--> "this is fake news" -> ["this is", "is fake", "fake news"]
                                 # 3gram--> "this is fake news" -> ["this is fake", "is fake news", "]
-    stop_words='english'      # αφαιρεση συχνων λεξεων
+    stop_words='english'      
 )
 
 X_train_tfidf = vectorizer.fit_transform(X_train)
@@ -117,3 +117,4 @@ probabilities=model.predict_proba(text_tfidf)
 print("\nPredicted label:", prediction[0])
 
 print("Probabilities for each class:", probabilities[0])
+
