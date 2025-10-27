@@ -71,11 +71,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 # print("Training set size:", X_train.shape[0])
 # print("Test set size:", X_test.shape[0])
 
-#Accuracy: κοντά στο 1, αλλά ελέγχεις και precision/recall γιατί οι κλάσεις μπορεί να μην είναι ισορροπημένες.
 
 # ---- TF-IDF Vectorization ----
 vectorizer = TfidfVectorizer(
-    max_features=5000,        # περιορισμος λεξεων
+    max_features=5000,   
     ngram_range=(1,3),          # 1gram--> "this is fake news" -> ["this", "is", "fake", "news"]
                                 # 2gram--> "this is fake news" -> ["this is", "is fake", "fake news"]
                                 # 3gram--> "this is fake news" -> ["this is fake", "is fake news", "]
@@ -83,7 +82,7 @@ vectorizer = TfidfVectorizer(
 )
 
 X_train_tfidf = vectorizer.fit_transform(X_train)
-X_test_tfidf = vectorizer.transform(X_test)  # σωστό transform, όχι fit_transform
+X_test_tfidf = vectorizer.transform(X_test)
 
 # print("---- TF-IDF Features ----")
 # print("X_train shape:", X_train_tfidf.shape)
@@ -117,5 +116,6 @@ probabilities=model.predict_proba(text_tfidf)
 print("\nPredicted label:", prediction[0])
 
 print("Probabilities for each class:", probabilities[0])
+
 
 
